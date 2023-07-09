@@ -1,23 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                @if (session())
+                    <!-- Vérifie si une session existe -->
+                    @if (session()->get('_previous') && str_contains(session()->get('_previous')['url'], 'login'))
+                        <!-- Vérifie si la session précédente contient une clé "_previous" et si l'URL de la session précédente contient le mot "login" -->
+                        <p class="w-75 mx-auto text-center alert alert-success">Vous êtes connecté</p>
+                        <!-- Affiche un paragraphe avec une classe de style pour afficher le message de succès -->
                     @endif
+                @endif
 
-                    {{ __('You are logged in!') }}
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection

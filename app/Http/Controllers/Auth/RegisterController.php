@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
-use Illuminate\Foundation\Auth\RegistersUsers; // Importe le trait RegistersUsers qui fournit les fonctionnalités d'inscription d'utilisateurs
-use Illuminate\Support\Facades\Hash; // Importe la façade Hash pour le hachage des mots de passe
-use Illuminate\Support\Facades\Validator; // Importe la façade Validator pour la validation des données
-use Illuminate\Validation\Rules\Password; // Importe la règle Password pour la validation des mots de passe
+use Illuminate\Foundation\Auth\RegistersUsers;                                                      // Importe le trait RegistersUsers qui fournit les fonctionnalités d'inscription d'utilisateurs
+use Illuminate\Support\Facades\Hash;                                                                // Importe la façade Hash pour le hachage des mots de passe
+use Illuminate\Support\Facades\Validator;                                                           // Importe la façade Validator pour la validation des données
+use Illuminate\Validation\Rules\Password;                                                           // Importe la règle Password pour la validation des mots de passe
 
 class RegisterController extends Controller
 {
@@ -23,14 +23,14 @@ class RegisterController extends Controller
     |
     */
 
-    use RegistersUsers; // Utilise le trait RegistersUsers pour ajouter les fonctionnalités d'inscription
+    use RegistersUsers;                                                                             // Utilise le trait RegistersUsers pour ajouter les fonctionnalités d'inscription
 
     /**
      * Where to redirect users after registration.
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME; // Définit la redirection des utilisateurs après leur inscription
+    protected $redirectTo = RouteServiceProvider::HOME;                                             // Définit la redirection des utilisateurs après leur inscription
 
     /**
      * Create a new controller instance.
